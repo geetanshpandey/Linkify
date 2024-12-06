@@ -146,9 +146,12 @@ const Dashboard: React.FC = () => {
                   <div className="text-gray-400">
                     {selectedSocialMedia ? (
                       <>
-                        <h2 className="text-xl font-semibold text-white text-center border-b border-gray-600 pb-2 mt-6">
-                          {selectedSocialMedia.name} Settings
+                        <div className="flex justify-between space-x-6 border-b border-gray-600 pb-2">
+                        <h2 className="text-xl font-semibold text-white pb-1 mt-6">
+                          {selectedSocialMedia.name}
                         </h2>
+                        <Button className="bg-blue-600 text-white mt-6">Connect</Button>
+                        </div>
                         <div className="space-y-2 mt-4">
                           <div className="text-center">Action</div>
                           <div>
