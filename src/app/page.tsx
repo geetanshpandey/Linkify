@@ -1,113 +1,125 @@
+import { Button } from "@/components/ui/button"; // ShadCN Button component
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"; // ShadCN Card
 import Image from "next/image";
+import Navbar from "@/components/main/navbar";
+import { Caveat } from 'next/font/google';
 
-export default function Home() {
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
+
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="min-h-screen bg-black text-white">
+      {/* Top Section */}
+      <Navbar/>
+
+      {/* Main Content */}
+      <main className="space-y-8 border-t border-neutral-800">
+        {/* 1. Oval Text */}
+        <div className="flex justify-center mt-20">
+          <div className="bg-neutral-800 px-8 py-4 rounded-full shadow-lg">
+            <h2 className="text-3xl font-semibold text-white">Link<span className="text-blue-500">ify</span></h2>
+          </div>
         </div>
-      </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        {/* 2. Centered Text Block */}
+        <div className="text-center">
+          <h3 className="text-4xl font-semibold text-gray-100"><span className={caveat.className}>Make your work easy at Link<span className="text-blue-500">ify</span></span></h3>
+        </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        {/* 3. Two Text Blocks (Left) and Empty Area (Right) */}
+        <div className="flex justify-around items-center p-6 pt-16 pb-16">
+          {/* Left Section */}
+          <div className="space-y- text-gray-200 ">
+            {/* Left Text Block 1 */}
+            <div className="border-none flex justify-center text-center">
+              <div>
+                <p className="text-3xl font-lg text-blue-400"><span className={caveat.className}>Automatic link detection tool</span></p>
+              </div>
+            </div>
+            {/* Left Text Block 2 */}
+            <div className="border-none flex justify-center text-center">
+              <div>
+                <p className="text-2xl font-lg"><span className={caveat.className}>Link detection made easy</span></p>
+              </div>
+            </div>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          {/* Empty Right Area */}
+          <div className="h-40 w-[32%] border-dashed border-2 border-neutral-600 flex items-center justify-center rounded-lg">
+            <span className="text-neutral-500">Empty</span>
+          </div>
+        </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        {/* 4. Image Section */}
+        <div className="flex justify-center mt-8 h-[60vh]">
+          <div className="w-[60%] sm:h-[100%] h-[40%] bg-neutral-700 rounded-lg shadow-lg flex items-center justify-center">
+            <div className="relative w-full h-full">
+              <Image
+                src="/vercel.svg"
+                alt="Image"
+                fill
+                style={{ objectFit: "cover" }}
+                priority // Optional: Use if this image is critical for the page
+              />
+            </div>
+          </div>
+        </div>
+        <section className="mt-12 sm:max-w-5xl max-w-4xl mx-auto">
+          <div className="flex justify-center text-center">
+          <h3 className="text-4xl font-bold mb-10 text-center text-blue-600"><span className={`${caveat.className}`}>Pricing</span></h3>
+          </div>
+        <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 pb-10">
+          {[
+            {
+              title: "Starter",
+              description: "Best option for personal use and for your personal project.",
+              price: "$29",
+            },
+            {
+              title: "Company",
+              description:
+                "Relevant for multiple users, extended & premium support.",
+              price: "$99",
+            },
+            {
+              title: "Enterprise",
+              description:
+                "Best for large scale uses and extended redistribution rights.",
+              price: "$499",
+            },
+          ].map((plan, index) => (
+            <div
+              key={index}
+              className="flex flex-col p-2 lg:mx-0 mx-4 mx-auto text-center text-gray-100 bg-neutral-900 rounded-lg border border-neutral-700 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white w-[1.5x]"
+            >
+              <h3 className="mb-4 text-3xl font-semibold"><span className={`${caveat.className}`}>{plan.title}</span></h3>
+              <p className="font-light text-gray-400 sm:text-lg dark:text-gray-400">
+                {plan.description}
+              </p>
+              <div className="flex justify-center items-baseline my-8">
+                <span className="mr-2 text-5xl font-extrabold text-blue-500">{plan.price}</span>
+                <span className="text-gray-400 dark:text-gray-400">/month</span>
+              </div>
+              <ul role="list" className="mb-8 space-y-4 text-left">
+              </ul>
+              <a
+                href="#"
+                className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
+              >
+               <Button className="bg-blue-500 hover:bg-blue-600 w-40">
+                Get started
+              </Button>
+              </a>
+            </div>
+          ))}
+        </div>
+        </section>
+      </main>
+    </div>
   );
 }
+
